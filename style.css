@@ -1,0 +1,215 @@
+/* الأنماط العامة وإعدادات اللغة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+.navbar-logo {
+    height: 70px; /* حجم معقول للشعار */
+    width: auto;
+    display: block; /* للتأكد من أنه عنصر كتلي */
+    margin: 10px auto; /* توسيط الشعار في أعلى الصفحة */
+}
+
+@media (min-width: 769px) {
+    /* على الشاشات الكبيرة، ضع الشعار على اليمين */
+    .navbar-logo {
+        float: right;
+        margin-left: 20px;
+        margin-top: 0;
+    }
+
+    .container h1 {
+        padding-top: 10px;
+        float: none;
+    }
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+h1 {
+    color: #007bff; /* لون أزرق جذاب */
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.disclaimer {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ffeeba;
+    font-size: 0.9em;
+}
+
+/* منطقة البحث والتصفية */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#searchInput {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-buttons button {
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9em;
+}
+
+.filter-buttons button:hover {
+    background-color: #e9f5ff;
+}
+
+.filter-buttons button.active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* شبكة البطاقات */
+.cards-grid {
+    display: grid;
+    gap: 20px;
+    /* تخطيط مرن (لشاشات العرض الكبيرة) */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* تصميم البطاقة الواحدة (بطاقة السباك) */
+.plumber-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border-right: 5px solid #007bff; /* خط مميز للمنتج */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.plumber-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-rating {
+    color: #ffc107; /* لون النجوم الذهبي */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card-info {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+.card-info strong {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.contact-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745; /* لون أخضر للاتصال */
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #218838;
+}
+
+/* تصميم خاص للمهارات (للتوضيح) */
+.skills-list span {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-left: 5px;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+/* =============== خاصية التجاوب مع شاشات الهاتف (Media Query) =============== */
+
+@media (max-width: 768px) {
+    /* تطبيق الأنماط على الأجهزة التي عرضها 768 بكسل أو أقل (الهواتف والتابلت الصغير) */
+    
+    .container {
+        /* إزالة الهوامش الجانبية لملء الشاشة بالكامل على الهاتف */
+        margin: 0;
+        padding: 10px; /* هامش داخلي بسيط فقط */
+        border-radius: 0; /* إزالة الحواف المستديرة على الهامش */
+        box-shadow: none; /* إزالة الظل لتحسين الأداء على الهاتف */
+    }
+
+    .cards-grid {
+        /* التأكد من ظهور البطاقات في عمود واحد */
+        grid-template-columns: 1fr; 
+    }
+    
+    #searchInput {
+        /* توسيع شريط البحث لملء الشاشة */
+        width: 100%;
+    }
+    
+    .plumber-card {
+        /* تقليل الحشو الداخلي للبطاقة للحفاظ على المساحة */
+        padding: 15px; 
+    }
+}
