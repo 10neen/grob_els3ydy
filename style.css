@@ -1,23 +1,42 @@
+/* ======================================================= */
+/* 🛠️ نظام ألوان جديد: فيروزي، أزرق ساطع، وأخضر مبهج */
+/* ======================================================= */
+
+:root {
+    --primary-color: #00bcd4; /* أزرق فيروزي ساطع - أساسي */
+    --secondary-color: #ff9800; /* برتقالي متوسط - لزر عرض المزيد */
+    --success-color: #4caf50; /* أخضر لزر الاتصال */
+    --background-light: #e0f7fa; /* خلفية فاتحة جداً مريحة للعين */
+    --card-bg: #ffffff; /* خلفية البطاقة */
+    --text-dark: #263238; /* لون النص الداكن */
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.08); /* ظل ناعم */
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15); /* ظل عند المرور */
+}
+
 /* الأنماط العامة وإعدادات اللغة */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--background-light); /* استخدام اللون الفيروزي الفاتح */
+    color: var(--text-dark);
     margin: 0;
     padding: 0;
-    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
-    text-align: right; /* محاذاة النص لليمين */
+    direction: rtl; 
+    text-align: right;
 }
 
 .navbar-logo {
-    height: 70px; /* حجم معقول للشعار */
+    height: 60px; /* تصغير الشعار قليلاً ليكون أنيقاً */
     width: auto;
-    display: block; /* للتأكد من أنه عنصر كتلي */
-    margin: 10px auto; /* توسيط الشعار في أعلى الصفحة */
+    display: block;
+    margin: 15px auto; 
+    transition: transform 0.3s;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
 }
 
 @media (min-width: 769px) {
-    /* على الشاشات الكبيرة، ضع الشعار على اليمين */
     .navbar-logo {
         float: right;
         margin-left: 20px;
@@ -25,191 +44,205 @@ body {
     }
 
     .container h1 {
-        padding-top: 10px;
+        padding-top: 5px;
         float: none;
     }
 }
 
-
 .container {
     max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 30px auto; /* زيادة الهامش العلوي */
+    padding: 25px;
+    background-color: var(--card-bg);
+    border-radius: 15px; /* حواف أكثر استدارة */
+    box-shadow: var(--shadow-subtle);
 }
 
-
-
-
-
 h1 {
-    color: #007bff; /* لون أزرق جذاب */
+    /* تدرج لوني عصري للعنوان */
+    background-image: linear-gradient(to left, #0097a7, var(--primary-color));
+    -webkit-background-clip: text;
+    color: transparent; 
     text-align: center;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    border-bottom: none; /* إلغاء الخط تحت العنوان */
+    padding-bottom: 5px;
+    margin-bottom: 35px;
+    font-size: 2.2em; /* حجم أكبر قليلاً */
+    font-weight: 700;
 }
 
 .disclaimer {
-    background-color: #fff3cd;
-    color: #856404;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ffeeba;
+    /* تصميم تنبيه ناعم وأقل حدة */
+    background-color: #fffde7; 
+    color: #9c27b0; /* لون مميز للإخلاء */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-right: 5px solid #9c27b0;
     font-size: 0.9em;
+    font-weight: 600;
 }
 
-/* منطقة البحث والتصفية */
+/* منطقة البحث */
 .controls {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
     margin-bottom: 25px;
 }
 
 #searchInput {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
+    padding: 15px; /* زيادة حجم الحقل قليلاً */
+    border: 2px solid #ccc; /* إطار أوضح */
+    border-radius: 30px; /* شكل دائري أنيق */
+    font-size: 1.1em;
     width: 100%;
     box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.filter-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+#searchInput:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+    outline: none;
 }
 
-.filter-buttons button {
-    padding: 8px 15px;
-    border: 1px solid #007bff;
-    background-color: #fff;
-    color: #007bff;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 0.9em;
-}
-
-.filter-buttons button:hover {
-    background-color: #e9f5ff;
-}
-
-.filter-buttons button.active {
-    background-color: #007bff;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.5);
-}
-
-/* شبكة البطاقات */
+/* شبكة البطاقات - للحفاظ على الكثافة (3-4 أعمدة) */
 .cards-grid {
     display: grid;
-    gap: 20px;
-    /* تخطيط مرن (لشاشات العرض الكبيرة) */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px; 
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 /* تصميم البطاقة الواحدة (بطاقة السباك) */
 .plumber-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    border-right: 5px solid #007bff; /* خط مميز للمنتج */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    background-color: var(--card-bg);
+    padding: 18px; 
+    border-radius: 12px; 
+    /* إطار ناعم من الأعلى باللون الأساسي */
+    border-top: 5px solid var(--primary-color); 
+    box-shadow: var(--shadow-subtle); 
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .plumber-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); 
+    box-shadow: var(--shadow-hover);
 }
 
 .card-name {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.card-rating {
-    color: #ffc107; /* لون النجوم الذهبي */
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    display: block;
+    font-size: 1.4em; 
+    font-weight: 700; 
+    color: var(--text-dark);
+    margin-bottom: 5px; 
+    /* إضافة خط أسفل الاسم بلمسة لونية */
+    border-bottom: 1px dashed #eee; 
+    padding-bottom: 5px;
 }
 
 .card-info {
-    font-size: 0.95em;
+    font-size: 0.95em; 
     margin-bottom: 8px;
+    color: #555;
+    line-height: 1.5;
 }
 
+/* أنماط أيقونات ومعلومات البطاقة */
 .card-info strong {
-    color: #007bff;
+    color: var(--primary-color); 
     font-weight: 600;
+    margin-left: 5px;
+}
+/* أيقونات Font Awesome */
+.card-info .fas {
+    color: var(--primary-color);
+    margin-left: 8px;
+    font-size: 1.1em;
 }
 
 .contact-button {
     display: block;
     width: 100%;
-    padding: 10px;
-    background-color: #28a745; /* لون أخضر للاتصال */
+    padding: 12px; 
+    /* استخدام تدرج لوني للزر الأخضر */
+    background: linear-gradient(to right, var(--success-color), #8bc34a); 
     color: white;
     text-align: center;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px; /* شكل بيضاوي أنيق */
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.1em; 
+    font-weight: 700;
     cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s;
+    margin-top: 15px; 
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+    transition: all 0.3s;
 }
 
 .contact-button:hover {
-    background-color: #218838;
+    background: linear-gradient(to right, #8bc34a, var(--success-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.6);
 }
 
-/* تصميم خاص للمهارات (للتوضيح) */
-.skills-list span {
-    display: inline-block;
-    background-color: #e9ecef;
-    color: #495057;
-    padding: 5px 10px;
-    border-radius: 15px;
-    margin-left: 5px;
-    font-size: 0.8em;
-    margin-top: 5px;
+/* أنماط زر "عرض المزيد" */
+#loadMoreButton {
+    background-color: var(--secondary-color) !important; 
+    color: white !important;
+    padding: 12px 25px !important;
+    border-radius: 30px !important;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+    transition: all 0.3s;
 }
+
+#loadMoreButton:hover {
+    background-color: #fb8c00 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 152, 0, 0.6);
+}
+
+/* تصميم الـ Footer (الجهة الراعية) */
+.design-credit {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin: 15px 0;
+}
+
+.footer {
+    padding: 10px 0;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #999;
+    border-top: 1px solid #eee;
+}
+
 
 /* =============== خاصية التجاوب مع شاشات الهاتف (Media Query) =============== */
 
 @media (max-width: 768px) {
-    /* تطبيق الأنماط على الأجهزة التي عرضها 768 بكسل أو أقل (الهواتف والتابلت الصغير) */
-    
     .container {
-        /* إزالة الهوامش الجانبية لملء الشاشة بالكامل على الهاتف */
         margin: 0;
-        padding: 10px; /* هامش داخلي بسيط فقط */
-        border-radius: 0; /* إزالة الحواف المستديرة على الهامش */
-        box-shadow: none; /* إزالة الظل لتحسين الأداء على الهاتف */
+        padding: 10px;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .cards-grid {
-        /* التأكد من ظهور البطاقات في عمود واحد */
-        grid-template-columns: 1fr; 
-    }
-    
-    #searchInput {
-        /* توسيع شريط البحث لملء الشاشة */
-        width: 100%;
+        grid-template-columns: 1fr;
     }
     
     .plumber-card {
-        /* تقليل الحشو الداخلي للبطاقة للحفاظ على المساحة */
-        padding: 15px; 
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .navbar-logo {
+        float: none;
+        margin: 15px auto;
     }
 }
