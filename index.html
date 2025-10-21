@@ -4,91 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<head>
-    <title> دليل سباكين مصر </title>
-    <link rel="icon" href="saidi-logo.PNG" type="image/png" />
-    <link rel="stylesheet" href="style.css">
+    <title> دليل سباكين مصر </title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="saidi-logo.PNG" type="image/png" />
+    <link rel="stylesheet" href="style.css">
 
     <meta property="og:title" content="اطلب سباك اسرع - دليل الصعيدي المعتمدين في إمبابة والوراق"/>
     <meta property="og:description" content="خدمة مجانية لربطك بسباكين معتمدين لأعمال التأسيس والصيانة العاجلة في منطقتك (بشتيل، إمبابة، الوراق)."/>
-    <meta property="og:image" content="https://10neen.github.io/grob_els3ydy/fb_share.PNG"/> 
+    <meta property="og:image" content="https://10neen.github.io/grob_els3ydy/fb_share.PNG"/>
     <meta property="og:url" content="https://10neen.github.io/grob_els3ydy/"/>
-    </head>
+</head>
 
-
-<body>
+<body oncontextmenu="return false;" onkeydown="if(event.keyCode==123 || (event.ctrlKey && event.shiftKey && event.keyCode==73)) return false;">
     <div class="container">
-        <img src="saidi-logo.PNG" alt="شعار الصعيدي" class="navbar-logo" />
+        <img src="saidi-logo.PNG" alt="شعار الصعيدي" class="navbar-logo" /> 
 
-           <h1>دليل السباكين في مناطق امبابه وبشتيل والوراق</h1>
-
+        <h1>دليل السباكين في مناطق امبابه وبشتيل والوراق</h1>
 
         <p class="disclaimer">
             🛑 إخلاء مسؤولية: هذه خدمة مجانية. المعرض غير مسؤول عن جودة العمل النهائي أو أي اتفاقيات مالية بين العميل والسباك.
         </p>
- 
-         <p class="disclaimer">
-
-   🛑 ملحوظه: التقدير بالنجوم وضع اعتباري ولا يعتد به  .
-
- 
-                     لتسجيل اسمك في الدليل مجانا أرسل البيانات التي تريد اظهارها  عبر واتساب على <a href="https://wa.me/201122019099" target="_blank">01122019099</a> أو اتصل على <a href="tel:01129777012">01129777012</a>.
 
         <p class="design-credit">برعاية الصعيدي للادوات الصحيه مسجد الرحمن بشتيل امبابه</p>
 
-  <input type="text" id="searchInput" placeholder=" ابحث بالاسم أو المناطق (  مثال امبابه , الوراق , بشتيل )..." onkeyup="filterCards()">
-
-
         <div class="controls">
-            
-            <div class="filter-buttons">
-                <button onclick="filterBySkill('all')" class="active">الكل</button>
-                <button onclick="filterBySkill('Skill_Est')">تأسيس وتشطيب</button>
-                <button onclick="filterBySkill('Skill_Maint')">صيانة بسيطة</button>
-                <button onclick="filterBySkill('Skill_Rep')"> شبكات وأعمال صعبة</button>
-            </div>
+            <input 
+                type="text" 
+                id="searchInput"
+                placeholder="ابحث بالاسم أو المنطقة أو رقم الموبايل الكامل..."
+                onkeyup="filterCards()"
+            >
         </div>
 
         <div id="plumberList" class="cards-grid">
-            </div>
-			
-			
-			<div id="plumberList" class="cards-grid">
-        </div>
-        
+        </div>
+            
         <div style="text-align: center; margin: 20px 0;">
-            <button id="loadMoreButton" style="
-                background-color: #007bff; 
-                color: white; 
-                padding: 10px 20px; 
-                border: none; 
-                border-radius: 5px; 
-                cursor: pointer;
-                font-size: 16px;
-                display: none; /* يتم التحكم به عبر JavaScript */
-            ">
+            <button id="loadMoreButton" style="display: none;"> 
                 عرض المزيد من السباكين
             </button>
         </div>
-			
+            
     </div>
 
-
-
-
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-	
-	
-	  
-	   
-	<div class="footer">
-        
+    <div class="footer">
         <p class="design-credit">تصميم  حسن العدوي  و(Gemini)</p>
     </div>
 
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-	
